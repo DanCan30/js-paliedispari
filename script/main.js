@@ -8,18 +8,16 @@ palindromeCheck.addEventListener("click", function() {
         // Take the value of the input
     let userInput = document.getElementById("user-palindrome-input").value;
 
-        // Transform it into a string
-    let userWord = userInput.toString();
 
         // Use reverse function to reverse the string
-    const reversedUserWord= reverseIt(userWord);
+    const reversedUserWord= reverseIt(userInput);
 
         // Select the <p> and print in the value of isItPalindrome()
     const palindromeResult = document.getElementById("palindrome-result");
 
     let palindromeResultMessage;
 
-    if (isItPalindrome(userWord, reversedUserWord) === true) {
+    if (isItPalindrome(userInput, reversedUserWord) === true) {
         palindromeResultMessage ="The choosen word is a palindrome!";
     } else {
         palindromeResultMessage = "The choosen word is not a palindrome.";
@@ -98,15 +96,31 @@ oddOrEvenButton.addEventListener("click", function() {
 
 function reverseIt(word) {
 
-        // Transform every character of the string in an index of an array
-    const splitted = word.split("");
+        // Set an empty variable
+    let reversedWord = "";
 
-        // Reverse the order of the indexes of the array
-    const reversed = splitted.reverse("");
+        // Every letter of the input is taken starting from the end to the start and is placed in the empty variable, filling it with the letters of the input in the reversed order
+    for ( let i = word.length - 1; i >= 0; i-- ) {
+        let letter = word[i];
+        reversedWord = reversedWord + letter;
+    }
+        // Return the filled variable
+    return reversedWord;
 
-        // Transform the reversed characters in a single string
-    const united= reversed.join("")
-    return united;
+
+
+                                        // OTHER METHOD
+
+
+    //     // Transform every character of the string in an index of an array
+    // const splitted = word.split("");
+
+    //     // Reverse the order of the indexes of the array
+    // const reversed = splitted.reverse("");
+
+    //     // Transform the reversed characters in a single string
+    // const united= reversed.join("")
+    // return united
 };
 
 function isItPalindrome(word1, word2) {
