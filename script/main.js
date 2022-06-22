@@ -36,10 +36,6 @@ palindromeCheck.addEventListener("click", function() {
 const oddOrEvenButton = document.getElementById("odd-or-even-button");
 
     // Set variables for the DOM
-let message;
-let sum;
-let userNumber;
-let aiNumber;
 let infoBox = document.getElementById("info");
 
 let aiInfo = document.createElement("p");
@@ -50,6 +46,11 @@ infoBox.append(aiInfo, userInfo, winnerInfo);
 
 oddOrEvenButton.addEventListener("click", function() {
 
+    let message;
+    let sum;
+    let userNumber;
+    let aiNumber;
+    
         // Select a start condition
     let odd = true;
 
